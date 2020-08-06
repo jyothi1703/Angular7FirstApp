@@ -1,0 +1,26 @@
+<hr>
+<div>
+    <h1>binding works!</h1>
+    <h2>Interpollation</h2>
+    <img src="{{imgUrl}}" alt="image">
+</div>
+<h2>Select Menu example for Interpollation</h2>
+<div id="months">
+<span>Months:</span>
+<select>
+    <option *ngFor = "let i of months">{{i}}</option>
+</select>
+<h2>List example of Interpollation</h2>
+<li *ngFor = "let x of days">{{x}}</li>
+</div>
+<div id="two">
+<h2>Property Binding</h2>
+<img [src]="imgUrl" alt="image">
+</div>
+<h2>Button example of Event Binding</h2>
+<button (click)="changeImage()">Change Image</button>
+<h2>{{text}}</h2>
+<button (click)="changeText()">Click Me!!!</button>
+<h2>Example of Two Way Data binding</h2>
+Enter your Name : <input type="text" [(ngModel)]="username"/>/<br>
+Name you have entered : {{username}}

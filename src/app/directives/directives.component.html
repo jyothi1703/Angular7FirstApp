@@ -1,0 +1,103 @@
+<hr>
+<h1 class="text-center">Directives Works!</h1>
+<h3>List Example of ngFor</h3>
+<ul *ngFor = "let x of userList">
+    <li>{{x}}</li>
+</ul>
+<h3>Table Example of ngFor</h3>
+<table class="table">
+    <tr>
+        <th>Emplyee ID</th>
+        <th>Emplyee Name</th>
+        <th>Emplyee Gender</th>
+        <th>Emplyee Phone Number</th>
+    </tr>
+    <tr *ngFor = "let emp of empList">
+        <td>{{emp.empId}}</td>
+        <td>{{emp.empName}}</td>
+        <td>{{emp.empGender}}</td>
+        <td>{{emp.empNum}}</td>
+    </tr>
+</table>
+<hr>
+<h3>Example for ngIf</h3>
+Enter a number : <input type="text" [(ngModel)]="userNum">
+<div *ngIf = "userNum % 2 == 0; else not">
+    <p>Number is even</p>
+</div>
+<ng-template #not>
+    <p>Number is odd</p>
+</ng-template>
+<h3>Example for ngSwitch</h3>
+Select a Country:
+<select (change)="choice($event.target.value)">
+    <option *ngFor = "let c of country" [value]="c.code">{{c.place}}</option>
+</select>
+<div [ngSwitch]="selectedCountry" class="jumbotron">
+    <div *ngSwitchCase = "'IND'">
+        <h1>India Calling code is : +91</h1>
+    </div>
+    <div *ngSwitchCase = "'UAE'">
+        <h1>UAE Calling code is : +38</h1>
+    </div>
+    <div *ngSwitchCase = "'USA'">
+        <h1>USA Calling code is : +65</h1>
+    </div>
+    <div *ngSwitchDefault>
+        <h1>Select a Country</h1>
+    </div>
+</div>
+<h3>Example for ngSwitch</h3>
+Select a Day :
+<select (change)="option($event.target.value)">
+    <option *ngFor = "let d of days" [value] = "d.id">{{d.name}}</option>
+</select>
+<div [ngSwitch]="selectedDay" class="jumbotron">
+    <div *ngSwitchCase = "'mon'">
+        <h1>You have selected Monday</h1>
+    </div>
+    <div *ngSwitchCase = "'tus'">
+        <h1>You have selected Tuesday</h1>
+    </div>
+    <div *ngSwitchCase = "'wen'">
+        <h1>You have selected Wenesaday</h1>
+    </div>
+    <div *ngSwitchDefault>
+        <h1>Select a Day</h1>
+    </div>
+</div>
+<div>
+    <h3>Attribute Directive - ngClass</h3>
+    <p [ngClass]="{classOne:cone,classTwo:ctwo}">Sample of ngClass</p>
+    <button (click)="toggle()">Toggle</button>
+
+    <h3>Attribute Directive - ngStyle</h3>
+    <p [ngStyle]="{'font-style':style,'font-size':size}">Sample of ngStyle</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
